@@ -5,9 +5,8 @@ function FiltroTipo({ tipoSeleccionado, onChangeTipo }) {
       <select value={tipoSeleccionado} onChange={(e) => onChangeTipo(e.target.value)}>
         <option value="Todos">Todos</option>
         <option value="Concierto">Concierto</option>
-        <option value="Exposición">Exposición</option>
         <option value="Teatro">Teatro</option>
-        <option value="Taller">Taller</option>
+        <option value="Exposición">Exposición</option>
       </select>
     </label>
   )

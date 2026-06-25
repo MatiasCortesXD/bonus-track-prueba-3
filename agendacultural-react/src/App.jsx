@@ -8,13 +8,27 @@ console.log('eventos cargados:', eventos)
 
 function App() {
   const [tipoSeleccionado, setTipoSeleccionado] = useState('Todos')
+  const [busqueda, setBusqueda] = useState('')
+  const MAX_BUSQUEDA_LENGTH = 50
+
+  const handleBusquedaChange = (value) => {
+    const textoNormalizado = value.replace(/\s+/g, ' ').trimStart()
+    setBusqueda(textoNormalizado.slice(0, MAX_BUSQUEDA_LENGTH))
+  }
 
   const eventosFiltrados = useMemo(() => {
-    if (tipoSeleccionado === 'Todos') {
-      return eventos
-    }
-    return eventos.filter((evento) => evento.tipo === tipoSeleccionado)
-  }, [tipoSeleccionado])
+    const textoBusqueda = busqueda.trim().toLowerCase().slice(0, MAX_BUSQUEDA_LENGTH)
+
+    return eventos.filter((evento) => {
+      const coincideTipo =
+        tipoSeleccionado === 'Todos' || evento.tipo === tipoSeleccionado
+      const coincideNombre = evento.nombre
+        .toLowerCase()
+        .includes(textoBusqueda)
+
+      return coincideTipo && coincideNombre
+    })
+  }, [tipoSeleccionado, busqueda])
 
   return (
     <main className="app">
@@ -23,12 +37,28 @@ function App() {
         <p>Descubre eventos culturales cercanos y filtra por tipo.</p>
       </header>
 
-      <FiltroTipo
-        tipoSeleccionado={tipoSeleccionado}
-        onChangeTipo={setTipoSeleccionado}
-      />
+      <section className="app-controls">
+        <FiltroTipo
+          tipoSeleccionado={tipoSeleccionado}
+          onChangeTipo={setTipoSeleccionado}
+        />
 
-      <ListaEventos eventos={eventosFiltrados} />
+        <label className="campo-busqueda">
+          Buscar por nombre:
+          <input
+            type="search"
+            value={busqueda}
+            onChange={(e) => handleBusquedaChange(e.target.value)}
+            maxLength={MAX_BUSQUEDA_LENGTH}
+            placeholder="Busca un evento..."
+          />
+        </label>
+      </section>
+
+      <ListaEventos
+        eventos={eventosFiltrados}
+        emptyMessage="No hay eventos que coincidan"
+      />
     </main>
   )
 }

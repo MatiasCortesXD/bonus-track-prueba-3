@@ -1,6 +1,6 @@
 fase1:no se uso ia
-fase2:
 
+fase2:
 1. Crea src/components/EventoCard.jsx. 
 2. El componente recibe por props: nombre, lugar, duracion, tipo, descripcion, fechas. 
 3. Muestra la información de forma visual y ordenada. 
@@ -14,4 +14,13 @@ Buenas prácticas de desarrollo seguro obligatorias en este componente:
 utilidad de prompt:
 
 se edito :
-fase3 : agrege el commit  “feat: renderizado de la lista con key”
+fase3:1. Crea src/components/ListaEventos.jsx que reciba el array de eventos por props. 
+2. Recorre el array con .map() y renderiza un EventoCard por cada evento · V3 Página 5 
+3. Asigna correctamente la prop key usando el id de cada elemento (no uses el índice del array). 
+4. En App.jsx, renderiza ListaEventos pasándole los datos importados
+
+fase4: 
+1. Crea src/components/FiltroTipo.jsx con botones o un selector para filtrar por el tipo: “Todos”, “Concierto”, “Teatro”, “Exposición”. 
+2. En App.jsx, usa useState para guardar el filtro seleccionado y un campo de búsqueda por nombre. 
+3. Aplica ambos filtros sobre el array antes de pasarlo a ListaEventos.
+4. Usa renderizado condicional para mostrar el mensaje “No hay eventos que coincidan” cuando el resultado quede vacío.

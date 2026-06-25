@@ -1,0 +1,1 @@
+Estructura del proyecto ajustada para que cumpla con el esquema requerido.

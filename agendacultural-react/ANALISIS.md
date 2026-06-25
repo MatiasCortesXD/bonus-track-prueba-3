@@ -29,3 +29,13 @@ Renderizado condicional :en la ListaEventos.jsx aparece el mensaje "No hay event
  Renderizado de listas (.map y key): Es adecuado porque permite mostrar múltiples eventos a partir de un arreglo de datos
 
  Renderizado condicional: Es una solución conveniente para mostrar contenido diferente según determinadas ocaciones
+
+
+
+ 1. ¿Qué ventaja tiene dividir la agenda en componentes en lugar de escribir todo en un solo archivo?
+
+R:permite que el código sea más claro, ordenado ya que cada componente se encarga de alguna funcion especifica dentro de la aplicacion
+
+2.¿Qué diferencia hay entre props y estado en tu solución? Da un ejemplo concreto de cada uno tomado de esta aplicación.
+
+R:los props son datos de un componente recibe para poder mostrar información,el estado es información que puede cambiar mientras se usa la aplicación

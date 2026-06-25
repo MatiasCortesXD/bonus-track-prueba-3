@@ -14,3 +14,4 @@ Buenas prácticas de desarrollo seguro obligatorias en este componente:
 utilidad de prompt:
 
 se edito :
+fase3 : agrege el commit  “feat: renderizado de la lista con key”

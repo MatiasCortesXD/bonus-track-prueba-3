@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-function EventoCard({ nombre, lugar, duracion, tipo, descripcion, fechas }) {
+function EventoCard({ nombre, lugar, duracion, tipo, descripcion, fechas, esGratuito }) {
   const normalizedTipo = tipo
     ? tipo
         .toLowerCase()
@@ -10,11 +10,17 @@ function EventoCard({ nombre, lugar, duracion, tipo, descripcion, fechas }) {
     : 'desconocido'
 
   return (
-    <article className={`evento-card evento-card--${normalizedTipo}`}>
+    <article
+      className={`evento-card evento-card--${normalizedTipo} ${
+        esGratuito ? 'evento-card--gratis' : ''
+      }`}
+    >
       <div className="evento-card__header">
         <span className="evento-card__type">{tipo}</span>
         <h3>{nombre}</h3>
       </div>
+
+      {esGratuito && <span className="evento-card__badge">GRATIS</span>}
 
       <p className="evento-card__description">{descripcion}</p>
 
@@ -39,6 +45,7 @@ EventoCard.propTypes = {
   tipo: PropTypes.string,
   descripcion: PropTypes.string,
   fechas: PropTypes.arrayOf(PropTypes.string),
+  esGratuito: PropTypes.bool,
 }
 
 EventoCard.defaultProps = {
@@ -48,6 +55,7 @@ EventoCard.defaultProps = {
   tipo: 'Desconocido',
   descripcion: 'Descripción no disponible.',
   fechas: [],
+  esGratuito: false,
 }
 
 export default EventoCard

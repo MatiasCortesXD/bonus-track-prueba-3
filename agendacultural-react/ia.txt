@@ -24,3 +24,8 @@ fase4:
 2. En App.jsx, usa useState para guardar el filtro seleccionado y un campo de búsqueda por nombre. 
 3. Aplica ambos filtros sobre el array antes de pasarlo a ListaEventos.
 4. Usa renderizado condicional para mostrar el mensaje “No hay eventos que coincidan” cuando el resultado quede vacío.
+
+fase5:
+1. Resalta visualmente los elementos con esGratuito: true (por ejemplo, una etiqueta “GRATIS” o un borde distinto). 
+2. Agrega un contador que muestre cuántas eventos son gratuitos. 
+3. Verifica que toda la app corre sin errores ni warnings en consola.

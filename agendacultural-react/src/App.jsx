@@ -30,6 +30,8 @@ function App() {
     })
   }, [tipoSeleccionado, busqueda])
 
+  const gratuitosFiltrados = eventosFiltrados.filter((evento) => evento.esGratuito).length
+
   return (
     <main className="app">
       <header className="app-header">
@@ -54,6 +56,10 @@ function App() {
           />
         </label>
       </section>
+
+      <p className="conteo-gratuitos">
+        {gratuitosFiltrados} evento{gratuitosFiltrados === 1 ? '' : 's'} gratuito{gratuitosFiltrados === 1 ? '' : 's'}
+      </p>
 
       <ListaEventos
         eventos={eventosFiltrados}

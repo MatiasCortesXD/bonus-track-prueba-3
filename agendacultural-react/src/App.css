@@ -182,3 +182,58 @@
     border-right-color: var(--border);
   }
 }
+
+.evento-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 12px;
+}
+
+.evento-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.evento-card__type {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: white;
+  background: #444;
+  border-radius: 999px;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.evento-card__description {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.evento-card__detail {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.evento-card--concierto {
+  border-color: #2d6cdf;
+}
+
+.evento-card--teatro {
+  border-color: #c72d49;
+}
+
+.evento-card--exposicion {
+  border-color: #2da76b;
+}
+
+.evento-card--desconocido {
+  border-color: var(--border);
+}

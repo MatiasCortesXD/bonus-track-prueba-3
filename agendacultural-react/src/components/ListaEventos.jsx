@@ -7,7 +7,7 @@ function ListaEventos({ eventos }) {
         <p>No hay eventos disponibles.</p>
       ) : (
         eventos.map((evento) => (
-          <EventoCard key={evento.id} evento={evento} />
+          <EventoCard key={evento.id} {...evento} />
         ))
       )}
     </section>
